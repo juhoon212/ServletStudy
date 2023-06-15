@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>파일 업로더</h1>
+	<hr>
+	<!-- 입력된 파일을 전달하기 위해 form 태그의 method 속성값을 반드시 post로 -->
+	<form action="upload.itwill" method="post" enctype="multipart/form-data"></form>
+	<table>
+		<tr>
+			<td>업로더</td>
+			<td><input type="text" name="uploader"></td>
+		</tr>
+		<tr>
+			<td>파일선택</td>
+			<td><input type="file" name="uploadfile"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><button type="submit"></button></td>
+		</tr>
+		
+	</table>
+</body>
+</html>
