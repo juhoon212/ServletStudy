@@ -35,8 +35,10 @@ public class LifeCycleServlet extends HttpServlet {
 			System.out.println("### LifeCycleServlet의 init() 메소드 호출 ###");
 			name = config.getServletContext().getInitParameter("name");
 			
+			// getServletContext() => contextParam의 요소를 가져오기 위해 사용
+			
 			// [web.xml] 파일의 init-param 엘리먼트로 제공되는 값은 ServletConfig 객체의
-			// getInitParameter(String name) 메소드를 호출하여 값을 얻어와서 반환
+			// getInitParameter(String name) 메소드를 호출하여 값을 얻어와서 반환 
 		}
 	
 	
