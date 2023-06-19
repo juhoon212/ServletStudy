@@ -60,7 +60,7 @@ public class SessionServlet extends HttpServlet {
 		out.println("<p>세션 고유값(SessionId) = "+session.getId()+"</p>");
 		//HttpSession.getMaxInactiveInterval() : 세션 유지시간(초)를 반환하는 메소드 
 		// => 세션 유지시간 : 세션을 사용하지 않을 경우 소멸되도록 설정하는 시간
-		session.setMaxInactiveInterval(20);
+		// session.setMaxInactiveInterval(20); => session 사용시간 변경
 		out.println("<p>세션 유지시간 = "+session.getMaxInactiveInterval()+"</p>");
 		
 		// HttpSession.setAttribute(String attributeName, Object attributeValue)
