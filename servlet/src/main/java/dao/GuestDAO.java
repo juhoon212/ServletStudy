@@ -77,9 +77,6 @@ public class GuestDAO extends JdbcDAO{
 			
 			result = pstmt.executeUpdate();
 			
-//			if(result > 0) {
-//				System.out.println(result + "개 변경 되었습니다");
-//			}
 		}catch(SQLException e) {
 			System.out.println("updateGuest메소드 오류 = " + e.getMessage());
 		} finally {
@@ -87,10 +84,12 @@ public class GuestDAO extends JdbcDAO{
 			
 		}
 		
+		
+
 		return result;
 	}
 	
-	public int deleteGuest(GuestDTO guest) {
+	public int deleteGuest(int num) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		int result = 0;
@@ -102,7 +101,7 @@ public class GuestDAO extends JdbcDAO{
 			
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setInt(1, guest.getNum());
+			pstmt.setInt(1, num);
 			
 			
 			result = pstmt.executeUpdate();
@@ -127,9 +126,11 @@ public class GuestDAO extends JdbcDAO{
 		try {
 			conn = getConnection();
 			
-			String sql = "select num, writer, subject, content, regdate from guest where num = ?";
-
+			String sql = "select * from guest where num = ?";
+			
 			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, num);
 			
 			rs = pstmt.executeQuery();
 			
